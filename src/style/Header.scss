@@ -1,9 +1,10 @@
 .headerBox{
-  width: 1400px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
   align-items: center;
+  margin: 0 auto;
   
   .headerText{
     font-size: 20px;

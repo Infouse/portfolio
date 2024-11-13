@@ -5,7 +5,9 @@
   .prefaceContainer{
     display: flex;
     width: 100%;
+    gap: 80px;
     .introduceTextBox{
+      width: calc(100% - 726px);
       margin-top: 120px;
       .introduceText{
         color: #FFFFFF;
@@ -24,15 +26,20 @@
     }
     .profileImageBox{
       position: relative;
-      margin-left: 80px;
+      width: calc(100% - 755px);
       .profileCircle{
+        width: 60%;
         display: block;
-        position: absolute;
-        width: 420px;
-        height: 400px;
-        border-radius: 50%;
-        border: 1px solid #D6B97F;
-        top: 112px;
+        &::before{
+          display: block;
+          position: absolute;
+          width: 420px;
+          height: 400px;
+          border-radius: 50%;
+          border: 1px solid #D6B97F;
+          top: 112px;
+          content: '';
+        }
       }
       .profileImage{
         width: 315px;
@@ -60,7 +67,10 @@
     font-size: 60px;
     font-weight: bold;
     color: #FFFFFF;
-    margin-top : 80px;
+    margin-top : 120px;
+    &:first-of-type{
+      margin-top: 160px;
+    }
   }
   .aboutmeText{
     font-size: 28px;
@@ -71,10 +81,12 @@
     justify-content: space-between;
     width: 100%;
     margin-top: 40px;
+    gap: 40px;
     .projectBox{
       width: 45%;
       border: 1px solid #D6B97F ;
       border-radius: 12px;
+      padding: 40px 52px;
 
      .projectThumbnail{
        width: 100%;
@@ -110,6 +122,63 @@
           display: block;
           line-height: 35px;
         }
+      }
+    }
+  }
+  .techStackContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 64px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    .techStackList{
+      max-width: 300px;
+      height: 300px;
+      width: 100%;
+      background-color: #30415C;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      .techStackimg{
+        max-width: 250px;
+        &>img{
+          width: 100%;
+        }
+      }
+      .techStackText{
+        font-size: 32px;
+        font-weight: bold;
+        color: #FFFFFF;
+      }
+    }
+  }
+  .experienceBox{
+    width: 100%;
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    margin-top: 120px;
+    .experienceList{
+      width: 45%;
+      border: 1px solid #CFA34C;
+      border-radius: 20px;
+      padding: 4rem;
+      position: relative;
+      .experienceSubTitle{
+        font-weight: bold;
+        font-size: 32px;
+        width: 120px;
+        position: absolute;
+        left: 19px;
+        top: -22px;
+        border: 1px solid #D6B97F;
+        text-align: center;
+        border-radius: 8px;
+        background-color: #111C2E;
       }
     }
   }

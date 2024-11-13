@@ -1,12 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../style/Main.scss'
 import profile from '../img/eximg.png'
 import daon from '../img/Daon.png'
 import ieum from '../img/Ieum.png'
 import Hongflix from '../img/Hongflix.png'
+import html from '../img/HtmlCss.png'
+import sass from '../img/Sass.png'
+import javascript from '../img/JavaScript.png'
+import react from '../img/React.png'
+import next from '../img/Next.png'
+import firesbase from '../img/Firebase.png'
+import typescript from '../img/TypeScript.png'
+import vue from '../img/Vue.png'
+import data from "../Json/Data.json"
 
 const Main = () => {
-  
+  const [team,setTeam] = useState([])
+  const [personal,setPersonal] = useState([]);
+  const [tech,setTech] = useState([]);
+  useEffect(()=>{
+  setTeam(data.teamproject)
+  setPersonal(data.personalproject)
+  setTech(data.techstack)
+  },[]);
+  if(team.length > 0){
+    console.log(tech)
+  }
   return (
     <div className='mainContainer'>
       <div className='prefaceContainer'>
@@ -46,7 +65,7 @@ const Main = () => {
              <p className='projectText'>담당한 페이지 : 객실안내, 이벤트, 이용후기</p>
              <p className='projectText'>담당한 기능 : Modal 팝업창 </p>
              <p className='projectText'>설명 : Front-end에 입문한 후 가장 초창기에 만든 웹페이지로 기존의 다온펜션 사이트를 리뉴얼 하였습니다.</p>
-             <div style={{marginTop:'88px'}} className='projectBtnBox'>
+             <div className='projectBtnBox'>
               <a href='https://qodql.github.io/daon/index.html'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -81,11 +100,119 @@ const Main = () => {
              </div>
         </li>
       </ul>
-      <h2 className='projectListTitle'>Personal Project</h2>
-      <ul className='personalProjectList'>
-        <li></li>
-        <li></li>
+      <h2 className='portfolioTitle'>Personal Project</h2>
+      <ul className='projectList'>
+        <li className='projectBox'>
+          <div className='projectThumbnail'>
+            <img className='projectImg' src={daon} alt="DaonThumbnail" />
+          </div>
+          <h3 className='projectTitle'>Todolist</h3>
+          <p className='projectText'>기술스택 : React</p>
+             <p className='projectText'>소요 기간 : 약 3일</p>
+             <p className='projectText'>설명 : React에 입문 후 첫 미니 프로젝트로 CRUD를 활용하여 Todolist 페이지를 만들었습니다.</p>
+             <div style={{marginTop:'88px'}} className='projectBtnBox'>
+              <a href='#'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='projectBtn'>Start Preview
+                </a>
+                <a href='#' 
+                target="_blank" 
+                rel="noopener noreferrer" className='projectBtn'>Go to Github
+                </a>
+              </div>
+        </li>
+        <li className='projectBox'>
+          <div className='projectThumbnail'>
+            <img className='projectImg' src={Hongflix} alt="IeumThumbnail" />
+          </div>
+          <h3 className='projectTitle'>HongFilx</h3>
+             <p className='projectText'>기술스택 : 기술스택 : React, Zustand, Axios</p>
+             <p className='projectText'>소요 기간 : 약 1주일</p>
+             <p className='projectText'>담당한 페이지 : 로그인, 회원가입, 아이디찾기, 마이페이지</p>
+             <p className='projectText'>설명 : TMDB Api를 활용하여 검색이 가능한 영화 소개 사이트를 제작하였습니다.(390px). </p>
+             <div className='projectBtnBox'>
+              <a href='#'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='projectBtn'>Start Preview
+              </a>
+              <a href='https://github.com/Infouse/Hongflix' 
+              target="_blank" 
+              rel="noopener noreferrer" className='projectBtn'>Go to Github
+              </a>
+             </div>
+        </li>
       </ul>
+      <h2 className='portfolioTitle'>Tech Stack</h2>
+      <ul className='techStackContainer'>
+        <li className='techStackList'>
+          <div className='techStackimg'>
+            <img src={html} alt="html이미지" />
+          </div>
+          <p className='techStackText'>Html/css</p>
+        </li>
+        <li className='techStackList'>
+          <div className='techStackimg'>
+            <img src={sass} alt="sass로고이미지" />
+          </div>
+          <p className='techStackText'>Sass</p>
+        </li>
+        <li className='techStackList'>
+          <div className='techStackimg'>
+            <img src={javascript} alt="javascript로고이미지" />
+          </div>
+          <p className='techStackText'>Javascript</p>
+        </li>
+        <li className='techStackList'>
+          <div className='techStackimg'>
+            <img src={next} alt="next로고이미지" />
+          </div>
+          <p className='techStackText'>Next</p>
+        </li>
+        <li className='techStackList'>
+          <div className='techStackimg'>
+            <img src={react} alt="react로고이미지" />
+          </div>
+          <p className='techStackText'>React</p>
+        </li>
+        <li className='techStackList'>
+          <div className='techStackimg'>
+            <img src={typescript} alt="typescript로고이미지" />
+          </div>
+          <p className='techStackText'>Typescript</p>
+        </li>
+        <li className='techStackList'>
+          <div className='techStackimg'>
+            <img src={firesbase} alt="firebase로고이미지" />
+          </div>
+          <p className='techStackText'>Firebase</p>
+        </li>
+        <li className='techStackList'>
+          <div className='techStackimg'>
+            <img src={vue} alt="vue로고이미지" />
+          </div>
+          <p className='techStackText'>Vue</p>
+        </li>
+      </ul>
+      <h1 className='portfolioTitle'>경험(가제)</h1>
+      <div className='experienceBox'>
+        <div className='experienceList'>
+          <h2 className='experienceSubTitle'>React</h2>
+          <p>전역 상태 관리인 Zustand  사용 경험이 있습니다.</p>
+          <p>Axios 사용 경험이 있습니다.</p>
+          <p>Next.js를 활용하여 SSR 개발 경험이 있습니다.</p>
+          <p>NextAuth를 활용하여 회원가입 및 커스텀,sns로그인 
+          개발 경험이 있습니다</p>
+        </div>
+        <div className='experienceList'>
+          <h2 className='experienceSubTitle'>React</h2>
+          <p>Firestore를 활용하여 DB를 구축하고, 이를 활용하여 CRUD를제작한 경험이 있습니다.</p>
+          <p>Firestore의 실시간 데이터 동기화 기능을 활용하여, 사용자 인터페이스에서 데이터 변경을 즉시 반영하는 실시간 업데이트 시스템을 구축한 경험이 있습니다."</p>
+
+        </div>
+      </div>
+      
     </div>
   )
 }
