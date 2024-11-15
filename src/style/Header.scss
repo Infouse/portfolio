@@ -9,9 +9,10 @@
   .headerText{
     font-size: 20px;
     color: #FFFFFF;
+    cursor: pointer;
   }
   .headerFlexBox{
-    width: 480px;
+    width: 45%;
     display: flex;
     justify-content: space-between;
   }

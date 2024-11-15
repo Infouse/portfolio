@@ -128,7 +128,7 @@
   .techStackContainer{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 64px;
     flex-wrap: wrap;
     margin-top: 40px;
@@ -168,17 +168,29 @@
       border-radius: 20px;
       padding: 4rem;
       position: relative;
+      max-height: 420px;
+
       .experienceSubTitle{
         font-weight: bold;
         font-size: 32px;
         width: 120px;
         position: absolute;
         left: 19px;
-        top: -22px;
+        top: -22px; 
         border: 1px solid #D6B97F;
         text-align: center;
         border-radius: 8px;
         background-color: #111C2E;
+        &:nth-child(1){
+          width: 30%;
+        }
+      }
+      .experienceText{
+        font-size: 20px;
+        font-weight: bold;
+        padding: 20px 0 ;
+        
+        
       }
     }
   }
