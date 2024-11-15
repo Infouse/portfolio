@@ -1,0 +1,30 @@
+.portfolioTitle{
+  font-size: 60px;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-top : 120px;
+}
+.contactBox{
+  width: 100%;
+  background-color: #30415C;
+  padding:  80px 0;
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-around;
+  .contactTextBox{
+    &>p{
+      font-size: 32px;
+      &:last-of-type{
+        margin-top: 20px;
+      }
+    }
+  }
+}
+.endText{
+  margin-top: 200px;
+  font-size: 80px;
+  font-weight: bold;
+  color: #CFA34C;
+  text-align: center;
+  height: 200px;
+}

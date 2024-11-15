@@ -1,10 +1,13 @@
 .headerBox{
+  max-width: 1400px ;
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
   align-items: center;
   margin: 0 auto;
+  position: fixed;
+  z-index: 99;
   
   .headerText{
     font-size: 20px;
