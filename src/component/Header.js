@@ -38,6 +38,8 @@ const Header = () => {
   }
 
   return (
+    <>
+    {
     <div className='headerBox'>
       <p onClick={topScroll} className='headerText'>Portfolio</p>
       <div className='headerFlexBox'>
@@ -47,6 +49,9 @@ const Header = () => {
         <p className='headerText'>Contact me</p>
       </div>
     </div>
+    }
+    </>
+
   )
 }
 
