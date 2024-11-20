@@ -11,14 +11,14 @@
       margin-top: 120px;
       .introduceText{
         color: #FFFFFF;
-        font-size: 40px;
+        font-size: 44px;
         font-weight: bold;
         &>span{
           font-size: 60px;
           color: #CFA34C;
         }
       }
-      .subIntruoduceText{
+      .subIntruoduceText:first-of-type{
         color: #FFFFFF;
         font-size: 20px;
         margin-top: 40px;
@@ -30,6 +30,7 @@
       .profileCircle{
         width: 60%;
         display: block;
+        position: relative;
         &::before{
           display: block;
           position: absolute;
@@ -82,6 +83,9 @@
     width: 100%;
     margin-top: 40px;
     gap: 40px;
+    &.active {
+      animation: motion 1s ease;
+    }
     .projectBox{
       width: 45%;
       border: 1px solid #D6B97F ;
@@ -189,9 +193,177 @@
         font-size: 20px;
         font-weight: bold;
         padding: 20px 0 ;
-        
-        
       }
     }
+  }
+}
+
+//max 1200 1024 768 480 
+
+//max 1399~1201
+
+@media screen and (max-width: 1399px) {
+  .mainContainer{
+    .prefaceContainer{
+   
+      .profileImageBox {
+        .profileCircle::before {
+          width: 360px;
+          height: 360px;
+          top: 112px;
+        }
+      }
+    }
+  }
+}
+
+//1200~769
+@media  (max-width : 1200px) {
+  .mainContainer{
+    .prefaceContainer{
+      align-items: center;
+      gap: 40px;
+      .introduceTextBox{
+        width: 70%;
+      }
+      .profileImageBox{
+        margin: 0  auto;
+        .profileImage{
+          position: unset;
+          min-width: 300px;
+          max-width: 450px;
+          width: 100%;
+        }
+        .profileCircle{
+           display: none;
+        }
+        .profileCircleBg{
+          display: none;
+        }
+      }
+    }
+    .projectList{
+      .projectBox{
+        .projectThumbnail{
+          height: unset;
+         &>img{
+          height: auto;
+         }
+        }
+      }
+    }
+  }
+}
+
+//768~481
+@media screen and (max-width : 768px) {
+  .mainContainer{
+    .projectList{
+      flex-direction: column;
+      .projectBox{
+        width: unset;
+
+      }
+    }
+    .prefaceContainer{
+      flex-direction: column-reverse;
+      gap: 120px;
+      .introduceTextBox{
+        width: 100%;
+        margin: 0;
+        .introduceText{
+          font-size: 60px;
+          text-align: center;
+          &>span{ 
+            color: #FFFFFF;
+            font-size: 60px;
+          }
+        }
+        .subIntruoduceText{
+          font-size: 24px;
+          &:first-of-type{
+            font-size: 24px;
+          }
+        }
+      }
+      .profileImageBox{
+        margin: 0  auto;
+        width: 60%;
+        .profileImage{
+          position: unset;
+          min-width: unset;
+          max-width: unset;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    .experienceBox{
+      flex-direction: column;
+      .experienceList{
+        width: unset;
+      }
+    }
+    .techStackContainer{
+      gap: 20px;
+      .techStackList{
+        max-width: 230px;
+        height: 240px;
+        width: 45%;
+        .techStackimg{
+          max-width: 150px;
+        }
+        .techStackText{
+          font-size: 24px;
+        }
+      }
+    }
+    .portfolioTitle{
+      text-align: center;
+    }
+  }
+}
+
+
+//480
+@media screen and (max-width : 480px) {
+  .mainContainer{
+    .prefaceContainer{
+      .introduceTextBox{
+        .subIntruoduceText{
+          font-size: 28px;
+          text-align: center;
+          &:first-of-type{
+            font-size: 28px;
+          }
+        }
+      }
+      .profileImageBox{
+        margin: 0  auto;
+        width: 60%;
+        .profileImage{
+          position: unset;
+          min-width: unset;
+          max-width: unset;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    .projectList{
+
+      .projectBox{
+        width: unset;
+      }
+    }
+  }
+}
+@keyframes motion {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    transform : translateY(0)
   }
 }

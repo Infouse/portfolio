@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '../style/Main.scss'
 import profile from '../img/eximg.png'
 import data from "../Json/Data.json"
@@ -9,6 +9,34 @@ const Main = () => {
   const [tech,setTech] = useState([]);
   const [front,setFront] = useState([]);
   const [database,setDatabase] = useState([]);
+  const personalRef = useRef(null);
+  const teamRef = useRef(null);
+  const techRef = useRef(null);
+  const frontRef = useRef(null);
+  const databaseRef = useRef(null);
+  const [reflist, setRefList] = useState([]);
+
+  useEffect(() => {
+    if (personalRef.current != null) {
+      setRefList([personalRef, teamRef, techRef, frontRef, databaseRef]);
+    }
+  }, []);
+  const elementViewpoint = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.intersectionRatio > 0.2){
+        entry.target.classList.add('active')
+      }
+      else{
+        entry.target.classList.remove('active')
+      }
+    })    
+  })
+  reflist.forEach((item)=>{
+    if(item.current != null){
+    elementViewpoint.observe(item.current)}
+  })
+
+
   useEffect(()=>{
   setTeam(data.teamproject)
   setPersonal(data.personalproject)
@@ -16,6 +44,7 @@ const Main = () => {
   setFront(data.frontexperience)
   setDatabase(data.database)
   },[]);
+  
   const getImage = (imageName) => {
     try {
       return require(`../img/${imageName}`);
@@ -28,13 +57,16 @@ const Main = () => {
     <div className='mainContainer'>
       <div className='prefaceContainer'>
         <div className='introduceTextBox'>
-          <h2 className='introduceText'>안녕하세요 Front-end 주니어 개발자<br/>
-          <span>이홍영</span> 입니다.</h2>
-          <p className='subIntruoduceText'>안녕하세요. Front-end 주니어 개발자를 꿈꾸는 이홍영 입니다.<br/> 
-          코딩 입문은 대학 시절 회로 설계를 위해 기초적인 C언어를 배우며 첫 코딩을 시작했습니다.<br/>
-          이를 통해 코딩에 대해 흥미를 갖기 시작하였고, 결과물이 직접 나타나는 프론트엔드에<br/> 
-          흥미를 느끼기 시작하였습니다.<br/> 
-          새로운 것에 대한 도전과 최선의 길이 맞는지 분석하는 자세로<br/>
+          <h2 className='introduceText'>안녕하세요 Front-end 주니어 개발자 <span>이홍영</span> 입니다.</h2>
+          <p className='subIntruoduceText'>안녕하세요. Front-end 주니어 개발자를 꿈꾸는 이홍영 입니다.</p>
+          <p className='subIntruoduceText'>
+          코딩 입문은 대학 시절 회로 설계를 위해 기초적인 C언어를 배우며 첫 코딩을 시작했습니다.</p>
+          <p className='subIntruoduceText'>
+          이를 통해 코딩에 대해 흥미를 갖기 시작하였고, 결과물이 직접 나타나는 프론트엔드에 
+          흥미를 느끼기 시작하였습니다.</p>
+          <p className='subIntruoduceText'>
+          새로운 것에 대한 도전과 최선의 길이 맞는지 분석하는 자세로</p>
+          <p className='subIntruoduceText'>
           사용자에게 최고의 UX를 제공하는 프론트엔드 개발자가 되기 위해 노력하겠습니다.</p>
         </div>
         <div className='profileImageBox'>
@@ -52,7 +84,7 @@ const Main = () => {
       이러한 피드백 과정을 통해 기술적 깊이와 유연함을 갖춘 개발자로 성장하여, <br/>
       어떤 프로젝트에서도 가치를 더하는 개발자가 되겠습니다.</p>
       <h2 className='portfolioTitle'>Team project</h2>
-      <ul className='projectList'>
+      <ul ref={teamRef} className="projectList">
         {
           team.length > 0 && team.map((item,idx)=>(
         <li key={idx} className='projectBox'>
@@ -81,7 +113,7 @@ const Main = () => {
         }
       </ul>
       <h2 className='portfolioTitle'>Personal Project</h2>
-      <ul className='projectList'>
+      <ul ref={personalRef} className="projectList" >
       {
         personal.length > 0 && personal.map((item,idx)=>(
         <li key={item.id} className='projectBox'>
@@ -108,7 +140,7 @@ const Main = () => {
       }
       </ul>
       <h2 className='portfolioTitle'>Tech Stack</h2>
-      <ul className='techStackContainer'>
+      <ul ref={techRef} className="techStackContainer">
         {
           tech.length > 0 && tech.map((item,idx)=>(
         <li key={idx} className='techStackList'>
@@ -122,7 +154,7 @@ const Main = () => {
       </ul>
       <h1 className='portfolioTitle'>경험(가제)</h1>
       <div className='experienceBox'>
-        <div className='experienceList'>
+        <div ref={frontRef} className='experienceList'>
           <h2 className='experienceSubTitle'>Front</h2>
           {
             Object.keys(front).length > 0 &&(
@@ -134,7 +166,7 @@ const Main = () => {
             ) 
           }
         </div>
-        <div className='experienceList'>
+        <div ref={databaseRef} className='experienceList'>
           <h2 className='experienceSubTitle'>Database</h2>
           {
             Object.keys(database).length > 0 &&(
