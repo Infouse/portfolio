@@ -15,6 +15,7 @@ const Main = () => {
   const frontRef = useRef(null);
   const databaseRef = useRef(null);
   const [reflist, setRefList] = useState([]);
+  const textRef = useRef([]);
 
   useEffect(() => {
     if (personalRef.current != null) {
@@ -23,20 +24,24 @@ const Main = () => {
   }, []);
   const elementViewpoint = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if(entry.intersectionRatio > 0.2){
+      if(entry.intersectionRatio > 0){
         entry.target.classList.add('active')
-      }
-      else{
-        entry.target.classList.remove('active')
       }
     })    
   })
-  reflist.forEach((item)=>{
-    if(item.current != null){
-    elementViewpoint.observe(item.current)}
-  })
-
-
+  console.log(textRef);
+  
+  useEffect(()=>{
+    reflist.forEach((item)=>{
+      if(item.current != null){
+      elementViewpoint.observe(item.current)}
+    })
+    if(textRef.current.length > 0){
+    textRef.current.forEach((item)=>{
+        elementViewpoint.observe(item)
+      })
+    }
+  },[reflist,textRef])
   useEffect(()=>{
   setTeam(data.teamproject)
   setPersonal(data.personalproject)
@@ -44,7 +49,6 @@ const Main = () => {
   setFront(data.frontexperience)
   setDatabase(data.database)
   },[]);
-  
   const getImage = (imageName) => {
     try {
       return require(`../img/${imageName}`);
@@ -52,7 +56,7 @@ const Main = () => {
       return null;
     }
   };
-
+  
   return (
     <div className='mainContainer'>
       <div className='prefaceContainer'>
@@ -83,7 +87,7 @@ const Main = () => {
       작은 개선이라도 이루어 내어, 다음 작업에 반영할 수 있도록 노력하고 있습니다.<br/><br/>
       이러한 피드백 과정을 통해 기술적 깊이와 유연함을 갖춘 개발자로 성장하여, <br/>
       어떤 프로젝트에서도 가치를 더하는 개발자가 되겠습니다.</p>
-      <h2 className='portfolioTitle'>Team project</h2>
+      <h2 ref={(el)=> textRef.current[0] = el} className='portfolioTitle'>Team project</h2>
       <ul ref={teamRef} className="projectList">
         {
           team.length > 0 && team.map((item,idx)=>(
@@ -112,7 +116,7 @@ const Main = () => {
           ))
         }
       </ul>
-      <h2 className='portfolioTitle'>Personal Project</h2>
+      <h2 ref={(el)=> textRef.current[1] = el} className='portfolioTitle'>Personal Project</h2>
       <ul ref={personalRef} className="projectList" >
       {
         personal.length > 0 && personal.map((item,idx)=>(
@@ -139,7 +143,7 @@ const Main = () => {
         )) 
       }
       </ul>
-      <h2 className='portfolioTitle'>Tech Stack</h2>
+      <h2 ref={(el)=> textRef.current[2] = el} className='portfolioTitle'>Tech Stack</h2>
       <ul ref={techRef} className="techStackContainer">
         {
           tech.length > 0 && tech.map((item,idx)=>(
@@ -152,9 +156,9 @@ const Main = () => {
           ))
         }
       </ul>
-      <h1 className='portfolioTitle'>경험(가제)</h1>
-      <div className='experienceBox'>
-        <div ref={frontRef} className='experienceList'>
+      <h2  ref={(el)=> textRef.current[3] = el} className='portfolioTitle'>경험(가제)</h2>
+      <div ref={frontRef} className='experienceBox'>
+        <div  className='experienceList'>
           <h2 className='experienceSubTitle'>Front</h2>
           {
             Object.keys(front).length > 0 &&(
