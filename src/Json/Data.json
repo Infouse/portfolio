@@ -3,11 +3,11 @@
     {
     "id": 0,
     "title" : "Daon 리뉴얼",
-    "tachstack":"기술스택 : Html/Sass/JavaScript",
-    "time" : "소요 기간 : 약 2주",
-    "page" : "담당한 페이지 : 객실안내, 이벤트, 이용후기",
-    "function" : "담당한 기능 : Modal 팝업창",
-    "explanation" : "설명 : Front-end에 입문한 후 가장 초창기에 만든 웹페이지로 기존의 다온펜션 사이트를 리뉴얼 하였습니다.",
+    "techstack":"Html/Sass/JavaScript",
+    "time" : "약 2주",
+    "page" : "객실안내, 이벤트, 이용후기",
+    "function" : "Modal 팝업창",
+    "explanation" : "Front-end에 입문한 후 가장 초창기에 만든 웹페이지로 기존의 다온펜션 사이트를 리뉴얼 하였습니다.",
     "img" : "Daon.png",
     "github" : "https://github.com/Infouse/DaonHongyeong",
     "distribution" : "https://qodql.github.io/daon/index.html"
@@ -15,11 +15,11 @@
   {
     "id" : 1,
     "title" : "IEUM 모바일 웹 (책 소개 사이트)",
-    "techstack" : "기술스택 : React/Next.js, Zustand, Firestore, Nextauth",
-    "time" : "소요 기간 : 약 10일",
-    "page":"담당한 페이지 : 로그인, 회원가입, 아이디찾기, 마이페이지",
-    "function" : "담당한 기능 : Firestore DB 구축, Nextauth 활용한 로그인 및 회원가입, 코멘트(DB에 넣는작업)",
-    "explanation" : "설명 : 경험이 없었던 서버 구축과 Nextauth를 활용하여 로그인 기능을 쉽게 만들기 위해 Next를 사용, 책 소개 모바일 홈페이지를 제작 하였습니다(390px).",
+    "techstack" : "React/Next.js, Zustand, Firestore, Nextauth",
+    "time" : "약 10일",
+    "page":"로그인, 회원가입, 아이디찾기, 마이페이지",
+    "function" : "Firestore DB 구축, Nextauth 활용한 로그인 및 회원가입, 코멘트(DB에 넣는작업)",
+    "explanation" : "경험이 없었던 서버 구축과 Nextauth를 활용하여 로그인 기능을 쉽게 만들기 위해 Next를 사용, 책 소개 모바일 홈페이지를 제작 하였습니다(390px).",
     "img" : "Ieum.png",
     "github" : "https://github.com/Infouse/Ieum-hong",
     "distribution" : "https://ieum-hong.vercel.app/"
@@ -29,9 +29,9 @@
     {
       "id" : "0",
       "title" : "Todolist",
-      "techstack" : "기술스택 : React,Axios",
-      "time" : "소요 기간 : 약 3일",
-      "explanation" : "설명 : React에 입문 후 첫 미니 프로젝트로 CRUD를 활용하여 Todolist 페이지를 만들었습니다.",
+      "techstack" : "React,Axios",
+      "time" : "약 3일",
+      "explanation" : "React에 입문 후 첫 미니 프로젝트로 CRUD를 활용하여 Todolist 페이지를 만들었습니다.",
       "img" : "Daon.png",
       "github" : "#",
       "distribution" : "#"
@@ -39,9 +39,9 @@
     {
       "id" : "1",
       "title" : "HongFilx",
-      "techstack" : "기술스택 : React, Zustand, Axios",
-      "time" : "소요 기간 : 약 1주일",
-      "explanation" : "설명 : TMDB Api를 활용하여 검색이 가능한 영화 소개 사이트를 제작하였습니다.(390px).",
+      "techstack" : "React, Zustand, Axios",
+      "time" : "약 1주일",
+      "explanation" : "TMDB Api를 활용하여 검색이 가능한 영화 소개 사이트를 제작하였습니다.(390px).",
       "img" : "Hongflix.png",
       "github" : "https://github.com/Infouse/Hongflix",
       "distribution" : ""      

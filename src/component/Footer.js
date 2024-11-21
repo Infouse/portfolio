@@ -4,19 +4,10 @@ import '../style/Footer.scss'
 const Footer = () => {
   return (
     <>
-    <h2 className='portfolioTitle'>Contact Me</h2>
     <div className='contactBox'>
-      <div className='contactTextBox'>
-        <p>Name : 이 홍 영</p>
-        <p>Email : hongyeong575@naver.com</p>
-      </div>
-      <div className='contactTextBox'>
-        <p>CellPhone : 010-6660-1578</p>
-        <p>residence : Incheon</p>
-      </div>  
+      <p>이홍영(Incheon)  &nbsp; | &nbsp;  Email : hongyeong575@naver.com &nbsp;   |  &nbsp; CellPhone : 010-6660-1578</p>
     </div>
 
-    <h2 className='endText'>끝까지 봐주셔서 감사합니다.</h2>
     </>
   )
 }

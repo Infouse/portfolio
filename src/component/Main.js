@@ -29,7 +29,6 @@ const Main = () => {
       }
     })    
   })
-  console.log(textRef);
   
   useEffect(()=>{
     reflist.forEach((item)=>{
@@ -96,11 +95,25 @@ const Main = () => {
             <img className='projectImg' src={getImage(item.img)} alt="DaonThumbnail" />
           </div>
           <h3 className='projectTitle'>{item.title}</h3>
-          <p className='projectText'>{item.techstack}</p>
-             <p className='projectText'>{item.time}</p>
-             <p className='projectText'>{item.page}</p>
-             <p className='projectText'>{item.function}</p>
-             <p className='projectText'>{item.explanation}</p>
+          <p className='projectSubText'>{item.explanation}</p>
+            <ul className='projectTextContainer'>
+              <li className='projectTextBox'>
+                <span>기술 스택</span>
+                <p className='projectText'>{item.techstack}</p>
+              </li>
+              <li className='projectTextBox'>
+                <span>소요 기간</span>
+                <p className='projectText'>{item.time}</p>
+              </li>
+              <li className='projectTextBox'>
+                <span>담당한 페이지</span>
+                <p className='projectText'>{item.page}</p>
+              </li>
+              <li className='projectTextBox'>
+                <span>담당한 기능</span>
+                <p className='projectText'>{item.function}</p>
+              </li>
+            </ul>
              <div className='projectBtnBox'>
               <a href={item.distribution}
                 target='_blank'
@@ -125,9 +138,21 @@ const Main = () => {
             <img className='projectImg' src={getImage(item.img)} alt={`${item.title} Thumbnail`} />
           </div>
           <h3 className='projectTitle'>{item.title}</h3>
-          <p className='projectText'>{item.techstack}</p>
-             <p className='projectText'>{item.time}</p>
-             <p className='projectText'>{item.explanation}</p>
+          <p className='projectSubText'>{item.explanation}</p>
+            <ul className='projectTextContainer'>
+              <li className='projectTextBox'>
+                <span>기술 스택</span>
+                <p className='projectText'>{item.techstack}</p>
+              </li>
+              <li className='projectTextBox'>
+                <span>소요 기간</span>
+                <p className='projectText'>{item.time}</p>
+              </li>
+              <li className='projectTextBox'>
+                <span>기능</span>
+                <p className='projectText'>{item.function}</p>
+              </li>
+            </ul>
              <div className='projectBtnBox'>
               <a href={item.distribution}
                 target='_blank'

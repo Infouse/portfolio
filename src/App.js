@@ -8,11 +8,13 @@ import './style/reset.scss';
 function App() {
   
   return (
-    <div className="container">
+    <>
       <Header/>
+    <div className="container">
       <Main/>
       <Footer/>
     </div>
+    </>
   );
 }
 

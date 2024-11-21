@@ -1,49 +1,92 @@
-.headerBox{
-  max-width: 1400px ;
+.bg{
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 20px;
-  align-items: center;
-  margin: 0 auto;
   position: sticky;
   top: 0;
   z-index: 99;
-  
-  .headerText{
-    font-size: 20px;
-    color: #FFFFFF;
-    cursor: pointer;
+  background-color: #111C2E;
+  &.active{
+    animation: header 0.5s forwards ease;
   }
-  .headerFlexBox{
-    width: 45%;
+  .headerBox{
+    max-width: 1400px ;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-  }
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 20px;
+    animation: start 1s ease;
+    .headerText{
+      font-size: 20px;
+      color: #FFFFFF;
+      cursor: pointer;
+    }
+    .headerFlexBox{
+      width: 45%;
+      display: flex;
+      justify-content: space-between;
+    }
+}
 }
 
 // 480~768px, 768~1024px, 1024~1200px, 1200px~
 
+@media screen and (max-width:1400px) {
+  .bg{
+    .headerBox{
+      max-width: unset;
+      .headerFlexBox{
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
 //반응형 1200px 이하
 @media screen and (max-width: 1200px){
-  .headerBox{
-    .headerText{
-      font-size: 16px;
+  .bg{
+    .headerBox{
+      .headerText{
+        font-size: 16px;
+      }
     }
   }
 }
 //반응형 1024px 이하
 @media screen and (max-width: 1024px){
-  .headerBox{
-    .headerText:first-of-type{
-      display: none;
-    }
-    .headerFlexBox{
-      width: 100%;
-      &>.headerText{
-        display: block;
+  .bg{
+    .headerBox{
+      .headerText:first-of-type{
+        display: none;
+      }
+      .headerFlexBox{
+        width: 100%;
+        &>.headerText{
+          display: block;
+        }
       }
     }
   }
   
+}
+
+@keyframes start {
+  0%{
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes header {
+  0%{
+    padding: 0;
+  }
+  100%{
+    padding-bottom: 20px;
+    background-color: #30415C;
+  }
 }

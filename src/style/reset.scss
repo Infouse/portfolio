@@ -23,6 +23,7 @@ time, mark, audio, video {
 	letter-spacing: -0.03em;
 	color: #FFFFFF;
 	text-decoration: none;
+	word-break: keep-all;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -30,7 +31,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1.2;
+	line-height: 1.4 !important;
 }
 ol, ul {
 	list-style: none;
@@ -51,7 +52,19 @@ table {
 .container {
   max-width: 1400px ;
   margin: 0 auto;
-  padding: 0 260px;
+  padding: 0 260px 120px 260px;
 	background-color: #111C2E;
 	height: 100%;
+}
+
+@media screen and (max-width : 1660px) {
+	.container{
+		padding: 0 120px;
+	}
+}
+
+@media screen and (max-width : 1400px) {
+	.container{
+		padding: 0 80px;
+	}	
 }
